@@ -797,7 +797,7 @@ false Zulu
     <database id="4" parent="1" name="library_test">
       <ObjectId>16646</ObjectId>
       <Owner>root</Owner>
-      <IntrospectionStateNumber>866</IntrospectionStateNumber>
+      <IntrospectionStateNumber>880</IntrospectionStateNumber>
       <Relations>sequence|table|16763|16765|1
 sequence|table|16770|16772|1
 </Relations>
@@ -877,7 +877,7 @@ U/10
 </Acl>
       <StateNumber>293</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>785</IntrospectionStateNumber>
+      <IntrospectionStateNumber>875</IntrospectionStateNumber>
     </schema>
     <schema id="21" parent="4" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -887,7 +887,7 @@ U/10
 </Acl>
       <StateNumber>286</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>786</IntrospectionStateNumber>
+      <IntrospectionStateNumber>876</IntrospectionStateNumber>
     </schema>
     <schema id="22" parent="4" name="public">
       <ObjectId>2200</ObjectId>
@@ -897,7 +897,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>867</IntrospectionStateNumber>
+      <IntrospectionStateNumber>881</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="23" parent="4" name="plpgsql">

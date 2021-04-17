@@ -15,7 +15,7 @@ public class BookEntity {
 
     private String name;
 
-    @OneToOne()
+    @OneToOne
     @JoinColumn(name = "people_id")
     private PeopleEntity people;
 }
