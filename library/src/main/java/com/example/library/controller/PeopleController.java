@@ -1,5 +1,6 @@
 package com.example.library.controller;
 
+import com.example.library.model.BookEntity;
 import com.example.library.model.PeopleEntity;
 import com.example.library.service.BookService;
 import com.example.library.service.PeopleService;
@@ -32,7 +33,10 @@ public class PeopleController {
     public PeopleEntity create(@RequestBody PeopleEntity peopleEntity){
         return peopleService.create(peopleEntity);
     }
-
+    @PostMapping("/add/{peopleId}")
+    public BookEntity addBook2(@RequestBody BookEntity bookEntity, @PathVariable Long peopleId){
+        return peopleService.addBook2(bookEntity, peopleId);
+    }
 
     @GetMapping("/post/{peopleId}/{bookId}")
     public String addBook(@PathVariable Long peopleId,@PathVariable Long bookId){

@@ -35,4 +35,10 @@ public class PeopleService {
         bookEntity.setPeople(peopleEntity);
         peopleRepo.save(peopleEntity);
     }
+
+    public BookEntity addBook2(BookEntity bookEntity, Long peopleId) {
+        PeopleEntity peopleEntity = peopleRepo.getById(peopleId);
+        bookEntity.setPeople(peopleEntity);
+        return bookRepo.save(bookEntity);
+    }
 }

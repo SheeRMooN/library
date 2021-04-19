@@ -15,7 +15,6 @@ public class PeopleEntity {
 
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "book_id")
+    @OneToOne( mappedBy = "people", cascade = CascadeType.ALL, optional = false)
     private BookEntity book;
 }
