@@ -1,8 +1,6 @@
 package com.example.library.controller;
 
-import com.example.library.model.BookEntity;
 import com.example.library.model.PeopleEntity;
-import com.example.library.service.BookService;
 import com.example.library.service.PeopleService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,34 +11,61 @@ import java.util.List;
 @AllArgsConstructor
 @RequestMapping("/people")
 public class PeopleController {
-    private PeopleService peopleService;
-    private BookService bookService;
+    PeopleService peopleService;
 
-    @GetMapping("/{id}")
-    public PeopleEntity get(@PathVariable Long id){
-        return peopleService.get(id);
+    @GetMapping("/all/sql")
+    public List<PeopleEntity> getAllSql(){
+        return peopleService.getAllSql();
     }
-    @GetMapping
-    public List<PeopleEntity> getAll(){
-        return peopleService.getAll();
+    @GetMapping("/all/jpql")
+    public List<PeopleEntity> getAllJpql(){
+        return peopleService.getAllJpql();
     }
-    @DeleteMapping("/{id}")
-    public String delete(@PathVariable Long id){
-        peopleService.delete(id);
-        return "succes";
+    @GetMapping("/all/all")
+    public List<PeopleEntity> getAllAll(){
+        return peopleService.getAllAll();
     }
-    @PostMapping("/post")
-    public PeopleEntity create(@RequestBody PeopleEntity peopleEntity){
-        return peopleService.create(peopleEntity);
+    @DeleteMapping("/sql/{id}")
+    public void deleteSql(@PathVariable Long id){
+        peopleService.deleteSql(id);
     }
-    @PostMapping("/add/{peopleId}")
-    public BookEntity addBook2(@RequestBody BookEntity bookEntity, @PathVariable Long peopleId){
-        return peopleService.addBook2(bookEntity, peopleId);
+    @DeleteMapping("/jpql/{id}")
+    public void deleteJPQL(@PathVariable Long id){
+        peopleService.deleteJPQL(id);
+    }
+    @DeleteMapping("/manager/{id}")
+    public void deleteManager(@PathVariable Long id){
+        peopleService.deleteManager(id);
     }
 
-    @GetMapping("/post/{peopleId}/{bookId}")
-    public String addBook(@PathVariable Long peopleId,@PathVariable Long bookId){
-        peopleService.addBook(peopleId,bookId);
-        return "succes";
-    }
+//    private PeopleService peopleService;
+//    private BookService bookService;
+//
+//    @GetMapping("/{id}")
+//    public PeopleEntity get(@PathVariable Long id){
+//        return peopleService.get(id);
+//    }
+//    @GetMapping
+//    public List<PeopleEntity> getAll(){
+//        return peopleService.getAll();
+//    }
+//    @DeleteMapping("/{id}")
+//    public String delete(@PathVariable Long id){
+//        peopleService.delete(id);
+//        return "succes";
+//    }
+//    @PostMapping("/post")
+//    public PeopleEntity create(@RequestBody PeopleEntity peopleEntity){
+//        return peopleService.create(peopleEntity);
+//    }
+//    @PostMapping("/add/{peopleId}")
+//    public BookEntity addBook2(@RequestBody BookEntity bookEntity, @PathVariable Long peopleId){
+//        return peopleService.addBook2(bookEntity, peopleId);
+//    }
+//
+//    @GetMapping("/post/{peopleId}/{bookId}")
+//    public String addBook(@PathVariable Long peopleId,@PathVariable Long bookId){
+//        peopleService.addBook(peopleId,bookId);
+//        return "succes";
+//    }
 }

@@ -15,6 +15,7 @@ public class PeopleEntity {
 
     private String name;
 
-    @OneToOne( mappedBy = "people", cascade = CascadeType.ALL, optional = false)
-    private BookEntity book;
+    private String gender;
+
+    private int age;
 }
